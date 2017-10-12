@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns:java="http://xml.apache.org/axis/wsdd/providers/java"
+	xmlns="http://xml.apache.org/axis/wsdd/">
+	<handler type="java:org.apache.axis.handlers.http.URLMapper"
+		name="URLMapper" />
+	<service name="testService" provider="java:RPC">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.wy.test.service.TestService" />
+	</service>
+	<transport name="http">
+		<requestFlow>
+			<handler type="URLMapper" />
+		</requestFlow>
+	</transport>
+</deployment>
